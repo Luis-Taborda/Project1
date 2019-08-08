@@ -2,7 +2,7 @@
   jQuery(function($) {
    
   
-    // Function to call the SYSTRAN Translate Api translate/
+    
     function translate(source, target, content, callback) {
       $.ajax({
         method:'GET',
@@ -35,9 +35,7 @@
   
           callback(err, data);
         },
-        error: function(xhr, status, err) {
-          callback(err);
-        }
+       
       });
     }
   
@@ -46,25 +44,24 @@
       content = content.replace(/<p>&nbsp;<\/p>/gi, '\n').replace(/<p>/gi, '').replace(/\n*<\/p>/gi, '\n');
       content = content.replace(/<br[ \/]*>/gi, '\n');
       content = content.replace(/&nbsp;/gi, ' ');
-      content = content.replace(/<([^> ]*)[^>]*>/gi, '');  //clean html markup
-      content = content.replace(/&lt;/gi, "<").replace(/&gt;/gi, ">"); //unescape some entities
+      content = content.replace(/<([^> ]*)[^>]*>/gi, '');  
+      content = content.replace(/&lt;/gi, "<").replace(/&gt;/gi, ">"); 
       return content;
     }
   
-    var $inputTextEditor = $('#inputTextEditor');
-    var $outputTextEditor = $('#outputTextEditor');
+    var $inputTextEditor = $('#inputText');
+    var $outputTextEditor = $('#outputText');
     var $translating = $('#translating');
     var $source = $('#source');
     var $target = $('#target');
   
     function launchTranslation() {
       $translating.removeClass('hidden');
-      //Extract text to translate
+    
       var toTranslate = getTextFromHtml($inputTextEditor.html());
       translate($source.val(), $target.val(), toTranslate, function(err, result) {
         $translating.addClass('hidden');
         if (!err) {
-          //Show result
           $outputTextEditor.text(result);
         } else {
           if (console.log)

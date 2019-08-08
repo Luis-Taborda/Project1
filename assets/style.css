@@ -1,14 +1,24 @@
 #source, #target, #translateButton {
     height: 31px;
     width: 90px;
+
+    
+}
+
+#translateButton{
+    margin-left: 510px;
+    margin-top: 20px;
+
 }
 
 #translationBox {
     width: 100%;
+    
 }
 
 #inputBox, #outputBox {
     width: 50%;
+   
 }
 
 .textEditor {
@@ -22,15 +32,17 @@
     max-height: 400px;
 }
 
-#inputTextEditor {
+#inputText {
     margin-right: 2px;
     border: 1px solid #ddd;
+    border-radius: 20px;
 }
 
-#outputTextEditor {
+#outputText {
     margin-left: 2px;
     border: 1px solid whitesmoke;
     background: whitesmoke;
+    border-radius: 20px;
 }
 
 #translating {

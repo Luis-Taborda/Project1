@@ -3,37 +3,49 @@
 <head>
     <meta charset="utf-8">
     <title>Verse</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <link href="./assets/style.css" rel="stylesheet">
     <script src="https://code.jquery.com/jquery-1.11.3.min.js"></script>
     <script src="./javascript/app.js"></script>
 </head>
 <body>
+<div class="container">
     <div class="controls">
         <select id="source">
             <option value="en" data-t selected>English</option>
-        </select>
-        <select id="target">
-            <option value="fr" data-t selected>French</option>
+            <option value="es" data-t>Spanish</option>
+            <option value="fr" data-t>French</option>
             <option value="ru" data-t>Russian</option>
             <option value="ja" data-t>Japanese</option>
             <option value="ko" data-t>Korean</option>
             <option value="zh" data-t>Chinese</option>
         </select>
-        <button type="button" id="translateButton" data-t>Translate</button>
-        <div id="translating" class="hidden" data-t>Translating...</div>
+        <select id="target">
+            <option value="es" data-t selected>Spanish</option>
+            <option value="fr" data-t>French</option>
+            <option value="ru" data-t>Russian</option>
+            <option value="ja" data-t>Japanese</option>
+            <option value="ko" data-t>Korean</option>
+            <option value="zh" data-t>Chinese</option>
+            <option value="en" data-t>English</option>
+        </select>
+      
     </div>
     <table id="translationBox">
         <tr>
             <td id="inputBox">
-                <div id="inputTextEditor" contenteditable="true" class="textEditor">
-                    This is a test.
+                <div id="inputText" contenteditable="true" class="textEditor">
+                    
                 </div>
             </td>
             <td id="outputBox">
-                <div id="outputTextEditor" class="textEditor">
+                <div id="outputText" class="textEditor">
                 </div>
             </td>
         </tr>
     </table>
+    <button type="button" id="translateButton" class="btn btn-outline-dark" data-t>Translate</button>
+    <div id="translating" class="hidden" data-t>Translating...</div>
+</div>
 </body>
 </html>
