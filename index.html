@@ -1,45 +1,51 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta charset="utf-8">
+    <title>Verse</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-    <link rel="stylesheet" href="./assets/reset.css">
-    <link rel="stylesheet" href="./assets/style.css">
-    <script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+    <link href="./assets/style.css" rel="stylesheet">
+    <script src="https://code.jquery.com/jquery-1.11.3.min.js"></script>
     <script src="./javascript/app.js"></script>
-    <title>Time sheet</title>
 </head>
 <body>
-    <div class="container">
-    <div class="jumbotron" align = "center">
-        <h2>Work Time Sheet</h2>
+<div class="container">
+    <div class="controls">
+        <select id="source">
+            <option value="en" data-t selected>English</option>
+            <option value="es" data-t>Spanish</option>
+            <option value="fr" data-t>French</option>
+            <option value="ru" data-t>Russian</option>
+            <option value="ja" data-t>Japanese</option>
+            <option value="ko" data-t>Korean</option>
+            <option value="zh" data-t>Chinese</option>
+        </select>
+        <select id="target">
+            <option value="es" data-t selected>Spanish</option>
+            <option value="fr" data-t>French</option>
+            <option value="ru" data-t>Russian</option>
+            <option value="ja" data-t>Japanese</option>
+            <option value="ko" data-t>Korean</option>
+            <option value="zh" data-t>Chinese</option>
+            <option value="en" data-t>English</option>
+        </select>
+      
     </div>
-    <div id="input-goes-here"></div>
-    <form role="form">
-            <div class="form-group row">
-              <label for="name-input">Employee Name</label>
-              <input class="form-control" id="name-input" type="text">
-            </div>
-            <div class="form-group row">
-              <label for="role-input">Role</label>
-              <input class="form-control" id="role-input" type="text">
-            </div>
-            <div class="form-group row">
-              <label for="date-input">Start Date (MM/DD/YYYY)</label>
-              <input class="form-control" id="date-input" type="text">
-            </div>
-            <div class="form-group row">
-                <label for="rate-input">Monthly Rate</label>
-                <input class="form-control" id="rate-input" type="text">
-            </div>
-            <button class="btn btn-default" id="add-user" type="submit">Submit</button>
-            
-          </form>
-    
-        
-    </div>
-    
+    <table id="translationBox">
+        <tr>
+            <td id="inputBox">
+                <div id="inputText" contenteditable="true" class="textEditor">
+                    
+                </div>
+            </td>
+            <td id="outputBox">
+                <div id="outputText" class="textEditor">
+                </div>
+            </td>
+        </tr>
+    </table>
+    <button type="button" id="translateButton" class="btn btn-outline-dark" data-t>Translate</button>
+    <div id="translating" class="hidden" data-t>Translating...</div>
+</div>
 </body>
 </html>
