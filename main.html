@@ -1,0 +1,127 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <title>Verse</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta charset="utf-8">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+  <link href="css/style.css" rel="stylesheet">
+  <script src="https://code.jquery.com/jquery-1.11.3.min.js"></script>
+  <script src="./javascript/app.js"></script>
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+<script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+
+
+	<!-- font-awesome icons -->
+	<link href="css/font-awesome.min.css" rel="stylesheet">
+	<!-- //font-awesome icons -->
+	<!--stylesheets-->
+	<link href="css/style.css" rel='stylesheet' type='text/css' media="all">
+	<!--//stylesheets-->
+  <script>
+    addEventListener("load", function () {
+      setTimeout(hideURLbar, 0);
+    }, false);
+
+    function hideURLbar() {
+      window.scrollTo(0, 1);
+    }
+  </script>
+
+</head>
+
+<body>
+  <!-- banner -->
+  <div class="banner-main">
+    <div class="banner-back ">
+      <div class="d-flex">
+        <div class="title-pages">
+          <h4>Verse</h4>
+        </div>
+        <div class="go-back text-right">
+          <a href="index.html">Back</a>
+        </div>
+      </div>
+      <div class="logo text-center py-lg-5 py-4">
+      
+     <h3 class="color">  Artist Name:</h3>
+        <input  id="artist" type="text"  >
+        
+        <h3  class="color">  Song Name:</h3> 
+        <input id="song" type="text"  >
+        <br><br>
+        
+        
+        <button type="submit" value="Submit"onclick="getData()"> Search</button>
+        
+        
+        <button type="submit" value="Submit"  id="reset-btn" onClick="reset()" >Look for a new song</button>
+        </div>
+       
+     
+	  <!--//banner -->
+      <!-- main -->
+      <section class="main py-lg-5 py-md-4 py-3">
+        <div class="container">
+          <div class="main-w3layouts-img text-center">
+        
+            <div class="container">
+              <div class="controls">
+                  <select id="source">
+                      <option value="en" data-t selected>English</option>
+                     
+                  </select>
+                  <select id="target">
+                      <option value="es" data-t selected>Spanish</option>
+                      <option value="fr" data-t>French</option>
+                      <option value="ru" data-t>Russian</option>
+                      <option value="ja" data-t>Japanese</option>
+                      <option value="ko" data-t>Korean</option>
+                      <option value="zh" data-t>Chinese</option>
+                      <option value="en" data-t>English</option>
+                  </select>
+                
+              </div>
+              <table id="translationBox">
+                  <tr>
+                      <td id="inputBox">
+                          <div id="inputText" contenteditable="true" class="textEditor">
+                              
+                          </div>
+                      </td>
+                      <td id="outputBox">
+                          <div id="outputText" class="textEditor">
+                          </div>
+                      </td>
+                  </tr>
+              </table>
+              <div id="translating" class="hidden" >Translating...</div><br> 
+              <button type="button" id="translateButton" >Translate</button>
+            
+          </div>
+      </section>
+      <!-- main -->
+      <!-- footer -->
+     
+      <!--//footer -->
+      <!-- copy right -->
+      <footer>
+        <div class="bottom-footer text-center py-3">
+          <p>
+              © 2019 | Designed for music
+          </p>
+        </div>
+      </footer>
+      <!-- copy right -->
+    </div>
+
+  </div>
+
+</body>
+
+</html>
