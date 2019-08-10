@@ -16,14 +16,17 @@ $.ajax({
         console.log("success got data", response);
         console.log("Text Track: " + response.result.track.text);
         var lyrics = response.result
-        $(".lyrics").append(lyrics.track.text)
+        $("#inputText").append(lyrics.track.text)
 
     });
 
 }
 function reset() {
     $("#reset-btn").click(function () {
-        $(".lyrics").empty();
+        $("#inputText").empty();
+        $("#outputText").empty()
+        $("#artist").val(" ")
+        $("#song").val(" ")
       
     })
     console.log("Reset")
@@ -107,4 +110,24 @@ function reset() {
   
     $('#translateButton').click(launchTranslation);
     launchTranslation();
+
+    
+    
+    // Your web app's Firebase configuration
+    var firebaseConfig = {
+        apiKey: "AIzaSyCC9eLuPhGu5BRNt_diRi8oj7vNfbL4YqU",
+        authDomain: "verse-d4a1b.firebaseapp.com",
+        databaseURL: "https://verse-d4a1b.firebaseio.com",
+        projectId: "verse-d4a1b",
+        storageBucket: "",
+        messagingSenderId: "700169353449",
+        appId: "1:700169353449:web:12acba3776aa6fdd"
+    };
+    // Initialize Firebase
+    firebase.initializeApp(firebaseConfig);
+
+    var dataBase = firebase.database();
+    var recentSearches = $("#artist").val().trim()
+    
+
   });

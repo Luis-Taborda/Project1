@@ -7,16 +7,19 @@
     <link href="./assets/style.css" rel="stylesheet">
     <script src="https://code.jquery.com/jquery-1.11.3.min.js"></script>
     <script src="./javascript/app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/6.3.5/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/6.0.4/firebase-database.js"></script>
 </head>
 <body>
-    
+
+            
 
    
-    
-     Artist Name:<br>
-      <input  id="artist" type="text"  >
+    <div class="container" align="center">
+     <h1>Artist Name:</h1>
+      <input  id="artist" type="text">
       <br>
-      Song Name:<br>
+      <h1>Song Name:</h1><br>
       <input id="song" type="text"  >
       <br><br>
       
@@ -31,6 +34,7 @@
   
   
   <div class="lyrics"><table width="100%" class="field"></table> </div>
+</div>
 <div class="container">
     <div class="controls">
         <select id="source">

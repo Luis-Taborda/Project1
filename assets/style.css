@@ -36,6 +36,7 @@
     margin-right: 2px;
     border: 1px solid #ddd;
     border-radius: 20px;
+    height: 1500px;
 }
 
 #outputText {
@@ -43,6 +44,7 @@
     border: 1px solid whitesmoke;
     background: whitesmoke;
     border-radius: 20px;
+    height: 1500px;
 }
 
 #translating {
@@ -58,4 +60,8 @@
 
 .controls {
     margin: 5px 20px 5px 2px;
+}
+
+h1{
+    font-size: 30px;
 }
