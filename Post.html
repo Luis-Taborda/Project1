@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+
+<html lang="en-us">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+        <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+        <script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+        <script src="./javascript/app.js"></script>
+      
+            <!-- font-awesome icons -->
+            <link href="css/font-awesome.min.css" rel="stylesheet">
+            <!-- //font-awesome icons -->
+            <!--stylesheets-->
+            <link href="css/style.css" rel='stylesheet' type='text/css' media="all">
+            <!--//stylesheets-->
+        
+            <script>
+                addEventListener("load", function () {
+                    setTimeout(hideURLbar, 0);
+                }, false);
+        
+                function hideURLbar() {
+                    window.scrollTo(0, 1);
+                }
+            </script>
+  <!-- Firebase References -->
+  <script src="https://www.gstatic.com/firebasejs/6.0.4/firebase-app.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/6.0.4/firebase-database.js"></script>
+
+</head>
+
+<body>
+
+        <div class="banner-main">
+                <div class="banner-back ">
+                        <div class="d-flex">
+                                <div class="title-pages">
+                                  <h4>Posts</h4>
+                                </div>
+                                <div class="go-back text-right">
+                                  <a href="index.html">Back</a>
+                                </div>
+                      </div>
+   
+     <br>
+   
+  
+
+      <!-- Sign-Up Card-->
+   
+        <div class="card">
+          <div class="card-header">
+            Share Your Ideas!
+          </div>
+
+          <div class="card-body">
+
+            <!-- Sign-up Form (note the various input "types")-->
+            <form role="form"> 
+                  <div class="row">
+              <div class="form-group col-lg-5">
+                <label for="name-input">Name:</label>
+                <input class="form-control" id="name-input" type="text">
+              </div>
+              
+              <div class="form-group col-lg-5">
+                <label for="comment-input">Thoughts/Posts:</label>
+                <textarea class="form-control" id="comment-input" rows="1"></textarea>
+              </div>
+            </div>
+              <div class="row"> <button class="myButton" id="add-user" type="submit">Submit</button>
+            </div>
+             
+            </form>
+
+          </div>
+     
+    </div>  
+      <!-- Most Recent Member Card -->
+   
+<br>
+<div class="row">
+      <!-- Wells for displaying all users -->
+      <div class="col-lg-12">
+        <div class="card">
+          <div class="card-header">
+            All Posts
+          </div>
+          <div class="card-body">
+            <div id="full-member-list"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <footer>
+				<div class="bottom-footer text-center py-3">
+					<p>
+						© 2019 | Designed for music
+					</p>
+				</div>
+			</footer>
+       
+  <!-- jQuery -->
+  <script src="https://code.jquery.com/jquery.js"></script>
+
+  <!-- Script -->
+  <script>
+    // ========================================== START CODING BELOW!!
+
+    // Initialize Firebase
+    var config = {
+      apiKey: "AIzaSyB_nDQZ0zhTsOvlZzH9pAGwTKK5ksKeZtU",
+      authDomain: "myproject1-37ef8.firebaseapp.com",
+  databaseURL: "https://myproject1-37ef8.firebaseio.com",
+  storageBucket: "myproject1-37ef8.appspot.com"
+    };
+
+    firebase.initializeApp(config);
+
+    var dataRef = firebase.database();
+
+    // Initial Values
+    var name = "";
+  
+    var comment = "";
+
+    // Capture Button Click
+    $("#add-user").on("click", function(event) {
+      event.preventDefault();
+
+      // YOUR TASK!!!
+      // Code in the logic for storing and retrieving the most recent user.
+      // Don't forget to provide initial data to your Firebase database.
+      name = $("#name-input").val().trim();
+     
+      comment = $("#comment-input").val().trim();
+
+      // Code for the push
+      dataRef.ref().push({
+
+        name: name,
+       
+        comment: comment,
+        dateAdded: firebase.database.ServerValue.TIMESTAMP
+      });
+    });
+
+    // Firebase watcher + initial loader HINT: This code behaves similarly to .on("value")
+    dataRef.ref().on("child_added", function(childSnapshot) {
+
+      // Log everything that's coming out of snapshot
+     
+      console.log(childSnapshot.val().name);
+    
+      console.log(childSnapshot.val().comment);
+      console.log(childSnapshot.val().joinDate);
+
+      // full list of items to the well
+      $("#full-member-list").append("<div class='well'><span class='member-name'> Name: " +
+        childSnapshot.val().name +
+      
+        " </span><br><span class='member-comment'> Post: " + childSnapshot.val().comment +
+        " </span></div><br>");
+
+      // Handle the errors
+    }, function(errorObject) {
+      console.log("Errors handled: " + errorObject.code);
+    });
+
+    // dataRef.ref().orderByChild("dateAdded").limitToLast(1).on("child_added", function(snapshot) {
+    //   // Change the HTML to reflect
+    //   $("#name-display").text(snapshot.val().name);
+    
+    //   $("#comment-display").text(snapshot.val().comment);
+    // });
+
+  </script> </div></div>
+</body>
+
+</html>
