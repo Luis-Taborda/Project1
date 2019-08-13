@@ -22,7 +22,10 @@ $.ajax({
 function reset() {
   $("#reset-btn").click(function () {
       $("#inputText").empty();
-    
+      $("#outputText").empty();
+      $("#outputBox").addClass('hidden');
+      $("#artist").val(" ");
+      $("#song").val(" ");
   })
   console.log("Reset")
 };
