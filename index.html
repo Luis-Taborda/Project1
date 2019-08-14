@@ -1,108 +1,122 @@
-
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-	<title>Verse</title>
-	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<meta charset="utf-8">
-	
-<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
-<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
-<script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
-
-<script src="./javascript/app.js"></script>
-	<!-- font-awesome icons -->
-	<link href="css/font-awesome.min.css" rel="stylesheet">
-	<!-- //font-awesome icons -->
-	<!--stylesheets-->
-	<link href="css/style.css" rel='stylesheet' type='text/css' media="all">
-	<!--//stylesheets-->
-
-	<script>
-		addEventListener("load", function () {
-			setTimeout(hideURLbar, 0);
-		}, false);
-
-		function hideURLbar() {
-			window.scrollTo(0, 1);
-		}
-	</script>
-	<!-- //google fonts -->
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+  <title>register</title>
+ <link rel="stylesheet" href="css/style.css">
 </head>
+<body class="auth-false bod">
+  <div class="container ">
+    <header class="clearfix">
+	  <h1>Register/login</h1>
+	  <hr/>
+      <div class="userAuth unauthenticated pull-right centr">
+        <button type="button" class="btn btn-primary" data-toggle="modal"  data-target="#registerModal">Register</button>
+        <button type="button" class="btn btn-success" data-toggle="modal" data-target="#loginModal">Login</button>
+      </div>
+    
+    </header>
+    
+    <main class="authenticated">
+  
+      <div id="contacts"></div>
+    </main>
+  </div>
+ 
+  <div class="modal fade" id="registerModal" tabindex="-1" role="dialog" aria-labelledby="Register" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <form id="registerForm" method="POST">
+          <div class="modal-header">
+            <h4 class="modal-title" id="registerModalLabel">Register</h4>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+          </div>
+          <div class="modal-body">
+            <div class="form-group">
+              <label for="recipient-name" class="control-label">First Name:</label>
+              <input type="text" class="form-control" id="registerFirstName">
+            </div>
+            <div class="form-group">
+              <label for="recipient-name" class="control-label">Last Name:</label>
+              <input type="text" class="form-control" id="registerLastName">
+            </div>
+            <div class="form-group">
+              <label for="recipient-name" class="control-label">Email:</label>
+              <input type="text" class="form-control" id="registerEmail">
+            </div>
+            <div class="form-group">
+              <label for="message-text" class="control-label">Password:</label>
+              <input type="password" class="form-control" id="registerPassword">
+            </div>
+            <div class="form-group">
+              <label for="message-text" class="control-label">Confirm Password:</label>
+              <input type="password" class="form-control" id="registerConfirmPassword">
+            </div>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+            <button type="submit" class="btn btn-primary" id="doRegister">Register</button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+  <div class="modal fade" id="loginModal" tabindex="-1" role="dialog" aria-labelledby="Login" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <form id="loginForm" method="POST">
+          <div class="modal-header">
+            <h4 class="modal-title" id="loginModalLabel">Login</h4>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+          </div>
+          <div class="modal-body">
+            <div class="form-group">
+              <label for="recipient-name" class="control-label">Email:</label>
+              <input type="text" class="form-control" id="loginEmail">
+            </div>
+            <div class="form-group">
+              <label for="message-text" class="control-label">Password:</label>
+              <input type="password" class="form-control" id="loginPassword">
+            </div>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+            <button type="submit" class="btn btn-primary" id="doLogin">Login</button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+ 
+  <div class="modal fade" id="messageModal" tabindex="-1" role="dialog" aria-labelledby="Message" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h4 class="modal-title" id="messageModalLabel"></h4>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        </div>
+        <div class="modal-footer">
+          <div class="pre-auth">
+            <button type="button" class="btn btn-default pull-left" data-dismiss="modal">Close</button>
+            <span class="">
+            
+              <button type="submit" class="btn btn-success" data-dismiss="modal" data-toggle="modal" data-target="#loginModal">Login</button>
+            </span>
+          </div>
+          <div class="post-auth"></div>
+        </div>
+      </div>
+    </div>
+  </div>
 
-<body>
-	<!-- banner -->
-	<div class="banner-main">
-		<div class="banner-back ">
-			<div class="logo text-center py-lg-5 py-4">
-				<h1>
-					<a href="index.html">Verse</a>
-				</h1>
-				<br>
-				<p>Welcome to Verse..!<br>
-					The only app that lets you search songs by artists and lets you translate it to various languages at the same time.
-				</p>
-			</div>
-			<!--//banner -->
-			<!-- main -->
-			<section class="main py-3">
-				<div class="container">
-					<div class="row">
-						<div class="col-lg-6 col-md-6 main-wthree-txt my-3">
-							<div class="text-wthree-txt">
-								<h3 class="my">Lyrics</h3>
-								<p class="mt-lg-4 mt-3">Lets get started..!
-									<br>
-									Your lyrics and translated song is just a click away..! 
-								</p>
-								<div class="outs_more-buttn mt-md-3 mt-3">
-									<a href="main.html">Click Here</a>
-								</div>
-							</div>
-						</div>
-						<div class="col-lg-6 col-md-6 my-3">
-							<div class="main-wthree-image">
-
-							</div>
-						</div>
-					</div>
-				</div>
-			</section>
-			<!--//main -->
-			
-		
-		
-			<!-- footer -->
-			<section>
-			
-					<div class="row">
-							 <div class="footer-titles" >
-							<h2>	<a  href="Post.html">view posts</a> </h2>
-						   
-							</div></div>
-				  
-						
-					
-				
-			</section>
-			<!--//footer -->
-			<!-- copy right -->
-			<footer>
-				<div class="bottom-footer text-center py-3">
-					<p>
-						© 2019 | Designed for music
-					
-					</p>
-				</div>
-			</footer>
-			<!-- copy right -->
-		</div>
-
-	</div>
-
+  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js" integrity="sha384-smHYKdLADwkXOn1EmN1qk/HfnUcbVRZyYmZ4qpPea6sjB/pTJ0euyQp0Mk8ck+5T" crossorigin="anonymous"></script>
+  <script src="https://www.gstatic.com/firebasejs/4.3.1/firebase.js"></script>
+  <!-- Contacts Store JavaScript -->
+  <script src="javascript/script.js"></script>
 </body>
-
 </html>

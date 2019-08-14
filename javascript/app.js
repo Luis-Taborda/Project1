@@ -111,3 +111,8 @@ jQuery(function($) {
  
  
 });
+$('#logout').on('click', function(e) {
+   
+  firebase.auth().signOut()
+  window.location.href = "index.html";
+});
