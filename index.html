@@ -4,26 +4,55 @@
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
   <title>register</title>
- <link rel="stylesheet" href="css/style.css">
+
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+<script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+<script src='https://cdn.firebase.com/js/client/2.2.1/firebase.js'></script>
+<script src="https://www.gstatic.com/firebasejs/6.0.4/firebase-app.js"></script>
+<script src="https://www.gstatic.com/firebasejs/6.0.4/firebase-database.js"></script>
+
+<script src="./javascript/app.js"></script>
+
+<!-- font-awesome icons -->
+<link href="css/font-awesome.min.css" rel="stylesheet">
+<!-- //font-awesome icons -->
+<!--stylesheets-->
+<link href="css/style.css" rel='stylesheet' type='text/css' media="all">
+<!--//stylesheets-->
+
+<script>
+  addEventListener("load", function () {
+    setTimeout(hideURLbar, 0);
+  }, false);
+
+  function hideURLbar() {
+    window.scrollTo(0, 1);
+  }
+</script>
 </head>
-<body class="auth-false bod">
-  <div class="container ">
-    <header class="clearfix">
-	  <h1>Register/login</h1>
-	  <hr/>
-      <div class="userAuth unauthenticated pull-right centr">
-        <button type="button" class="btn btn-primary" data-toggle="modal"  data-target="#registerModal">Register</button>
-        <button type="button" class="btn btn-success" data-toggle="modal" data-target="#loginModal">Login</button>
-      </div>
+
+
+<body class="auth-false ">
+    <div class="banner-main">
+        <div class="banner-back "> 
+           
+           
+         
+  <div class="container  bod">
     
-    </header>
+     
+              
+                <div class="userAuth unauthenticated text-center pull-right centr">
+                    <h1>Register/login</h1>
+                  <button type="button" data-toggle="modal"  data-target="#registerModal">Register</button>
+                  <button type="button" data-toggle="modal" data-target="#loginModal">Login</button>
+                </div>
     
-    <main class="authenticated">
-  
-      <div id="contacts"></div>
-    </main>
+   
   </div>
  
   <div class="modal fade" id="registerModal" tabindex="-1" role="dialog" aria-labelledby="Register" aria-hidden="true">
@@ -118,5 +147,7 @@
   <script src="https://www.gstatic.com/firebasejs/4.3.1/firebase.js"></script>
   <!-- Contacts Store JavaScript -->
   <script src="javascript/script.js"></script>
+  </div>
+  </div>
 </body>
 </html>
