@@ -203,10 +203,6 @@ ul li{display:inline-block;}
 
 
 
-/*--//contact--*/
-
-
-/*--//contact--*/
 .footer-titles h2 a {
     text-align: center;
     font-size: 40px;
@@ -216,21 +212,7 @@ ul li{display:inline-block;}
     letter-spacing: 2px;
 }
 
-button.btn1 {
-    width: 20%;
-    color: #fff;
-    border: 1px solid #fff;
-    padding: 8px 0;
-    font-size: 16px;
-    background: #e827ad;
-    -webkit-transition: 0.5s all;
-    -moz-transition: 0.5s all;
-    -o-transition: 0.5s all;
-    -ms-transition: 0.5s all;
-    transition: 0.5s all;
-    cursor: pointer;
-    margin-top: -2px;
-}
+
 
 .footer-titles p {
     text-align: center;
@@ -286,15 +268,6 @@ font-size: 37px;
 }
 
 
-
-.blog-img-one, .blog-img-two, .blog-img-three {
-    background-size: cover;
-    -webkit-background-size: cover;
-    -moz-background-size: cover;
-    -o-background-size: cover;
-    -ms-background-size: cover;
-    min-height: 236px;
-}
 }
 @media(max-width:1366px){
 .banner-back {
@@ -302,7 +275,7 @@ font-size: 37px;
     left: 21%;
 }
 
-button.btn1 {
+button {
     padding: 6px 0;
 	}
 .title-pages h4 {
@@ -527,9 +500,7 @@ margin: 0em 0em 2.5em 0em;
     letter-spacing: 1px;
 }	
 
-.gallery-img-grid {
-    width: 100%;
-}
+
 }
 @media(max-width:440px){
 .main-wthree-image, .blog-wthree-txt {
@@ -550,6 +521,7 @@ margin: 0em 0em 2.5em 0em;
 .logo p {
     line-height: 22px;
 }
+
 }
 @media(max-width:384px){
 .banner-main {
@@ -565,40 +537,21 @@ margin: 0em 0em 2.5em 0em;
 .title-pages h4 {
     font-size: 25px;
 }
-#translationBox {
-    width: 100%;
-    
-}
-#inputBox, #outputBox {
-    width: 50%;
-   
-}
+
 }
 @media(max-width:375px){
 .banner-back {
     padding: 1.2em 1.2em;
 }
-#translationBox {
-    width: 100%;
-    
-}
-#inputBox, #outputBox {
-    width: 50%;
-   
-}
+
+
 }
 @media(max-width:320px){	
 .main-wthree-image{
     min-height: 189px;
 }
-#translationBox {
-    width: 100%;
-    
-}
-#inputBox, #outputBox {
-    width: 50%;
-   
-}
+
+
 }
 /*--//responsive--*/
 
@@ -645,21 +598,7 @@ button{
     padding: 9px 10px;
     border: none;
 }
-.myButton{
-    font-size: 13px;
-    color: #ffffff;
-    text-decoration: none;
-    font-weight: 400;
-    text-transform: capitalize;
-    display: inline-block;
-    letter-spacing: 1px;
-    background-color: #e827ad;
-    outline: none;
-    border-radius: 4px;
-    padding: 9px 10px;
-    border: none;
-    margin-left: 25px; 
-}
+
 
 
 .textEditor {
@@ -690,7 +629,7 @@ button{
 }
 
 #translating {
-    color: #428bca;
+    color: white;
     font-style: italic;
     display: inline-block;
     margin-left: 15px;
@@ -706,13 +645,7 @@ button{
     margin: 5px 20px 5px 2px;
 }
 
-header h1 {
-    display: inline-block;
-    margin: 10px 0;
-  }
-  header + hr {
-    margin: 10px 0;
-  }
+
   
   .userAuth {
     display: block;
@@ -730,10 +663,7 @@ header h1 {
     margin: 0 0.5em;
     color: #FFF;
   }
-  .user-info img{
-    display: inline-block;
-    max-width: 2em;
-  }
+
   
   .auth-true .authenticated,
   .auth-false .unauthenticated {
@@ -753,5 +683,5 @@ header h1 {
   }
   
   .centr{
-    margin: 25% 42%;   
+    margin: 36% 30%;   
   }
